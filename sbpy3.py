@@ -9,10 +9,10 @@ from googletrans import Translator
 client = LineClient(id='EMAILMU', passwd='PASSWORDMU')
 #client = LineClient(authToken='AUTH TOKEN')
 client.log("Auth Token : " + str(client.authToken))
-
+#========================================================
 channel = LineChannel(client)
 client.log("Channel Access Token : " + str(channel.channelAccessToken))
-
+#========================================================
 poll = LinePoll(client)
 mode='self'
 cctv={
@@ -20,11 +20,11 @@ cctv={
     "point":{},
     "sidermem":{}
 }
-
+#========================================
 def restart_program():
     python = sys.executable
     os.execl(python, python, * sys.argv)
-
+#=======================================
 while True:
     try:
         ops=poll.singleTrace(count=50)
